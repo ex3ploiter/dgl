@@ -213,6 +213,9 @@ def dgl_main():
     test_roc, test_ap = get_scores(test_edges, test_edges_false, logits)
     # roc_means.append(test_roc)
     # ap_means.append(test_ap)
+    
+    torch.save(vgae_model.state_dict(), 'model_sd.pth')
+    
     print(
         "End of training!",
         "test_roc=",
